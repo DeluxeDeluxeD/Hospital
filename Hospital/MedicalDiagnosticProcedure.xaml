@@ -1,0 +1,33 @@
+﻿<Page x:Class="Hospital.MedicalDiagnosticProcedure"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      mc:Ignorable="d" 
+      d:DesignHeight="400" d:DesignWidth="800"
+      Title="MedicalDiagnosticProcedure">
+
+    <Grid Background="White">
+        <StackPanel Orientation="Vertical">
+            <TextBlock Text="История лечебно-диагностических мероприятий" HorizontalAlignment="Center"  Height="30" VerticalAlignment="Top" FontWeight="Bold" FontSize="24"/>
+            <DataGrid x:Name="DGridPatients" AutoGenerateColumns="False" IsReadOnly="True" HorizontalAlignment="Stretch">
+                <DataGrid.Columns>
+                    <DataGridTextColumn Binding="{Binding Patients.Surname}" FontSize="20" Header="Фамилия" Width="140"></DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding Patients.MedicalCardNumber}" FontSize="20" Header="Медицинская карта" Width="130"></DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding MedicalDiagnosticProcedure.EventType}" FontSize="20" Header="Диагностические мероприятия" Width="*"></DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding MedicalDiagnosticProcedure.Results}" FontSize="20" Header="Результаты" Width="*"></DataGridTextColumn>
+                    <DataGridTextColumn Binding="{Binding MedicalDiagnosticProcedure.Recommendations}" FontSize="20" Header="Рекомендации" Width="*"></DataGridTextColumn>
+
+                    <DataGridTemplateColumn Width="200">
+                        <DataGridTemplateColumn.CellTemplate>
+                            <DataTemplate>
+                                <Button Content="Редактировать"></Button>
+                            </DataTemplate>
+                        </DataGridTemplateColumn.CellTemplate>
+                    </DataGridTemplateColumn>
+                </DataGrid.Columns>
+            </DataGrid>
+        </StackPanel>
+    </Grid>
+</Page>
+
